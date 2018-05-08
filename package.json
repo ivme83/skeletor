@@ -1,0 +1,37 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NolanKern/Project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NolanKern/Project-2/issues"
+  },
+  "homepage": "https://github.com/NolanKern/Project-2#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "child-process-promise": "^2.2.1",
+    "easy-zip": "0.0.4",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "rimraf": "^2.6.2",
+    "sequelize": "^4.37.7",
+    "sequelize-cli": "^4.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+<!-- views/home.handlebars -->
+{{#if user}}
+  <div class="jumbotron">
+    <p>Please make a selection.</p>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Sequelize Init</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="check1">
+        <label class="form-check-label" for="check1">
+          Config
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="check2">
+        <label class="form-check-label" for="check2">
+          Models
+        </label>
+      </div>
+            <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="check3">
+        <label class="form-check-label" for="check3">
+          Migration
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="check4">
+        <label class="form-check-label" for="check4">
+          Seeders
+        </label>
+      </div>
+      <button id="btnSeq" class="btn btn-primary">Create</button>
+    </div>
+  </div>
+
+{{else}}
+  <div class="jumbotron">
+
+    <p>Sign in and view your profile!</p>
+    <p>
+      <a href="/signin" class="btn btn-primary btn-lg" role="button">
+        <span class="glyphicon glyphicon-user"></span>
+        Sign in!
+      </a>
+    </p>
+  </div>
+
+{{/if}}
