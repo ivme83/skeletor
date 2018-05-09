@@ -8,36 +8,45 @@ dwnldBtn.click(e => {
 });
 
 btnSeq.click(e => {
-    let cmdStr = "sequelize init";
+
+    let configArr = [];
 
     if ($('#check1').is(":checked"))
     {
-        cmdStr += " init:config";
+        configArr.push(true);
+    } else {
+        configArr.push(false);
     }
 
     if ($('#check2').is(":checked"))
     {
-        cmdStr += " init:models";
+        configArr.push(true);
+    } else {
+        configArr.push(false);
     }
 
     if ($('#check3').is(":checked"))
     {
-        cmdStr += " init:migrations";
+        configArr.push(true);
+    } else {
+        configArr.push(false);
     }
 
     if ($('#check4').is(":checked"))
     {
-        cmdStr += " init:seeders";
+        configArr.push(true);
+    } else {
+        configArr.push(false);
     }
 
-    // console.log(cmdStr); 
-    let command = {
-        cmdStr:cmdStr
+    let arr = {
+        configArr:configArr
     };
+
 
     $.ajax("/api/runCmd", {
     type: "POST",
-    data: command
+    data: arr
     }).then(
     function(data) {
         console.log("Success");

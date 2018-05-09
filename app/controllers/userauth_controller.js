@@ -57,8 +57,10 @@ router.post('/signup',
 });
 
 router.post('/api/runCmd', function(req, res){
-    let cmdStr = req.body.cmdStr;
-    console.log("THIS IS THE REQ USER " + req.user);
+    let configArr = req.body.configArr;
+
+    let cmdStr = createCommand(configArr);
+
     runCommand(cmdStr, req.user.username).then(function(value){
         res.send({redirect: '/dl'});
     });
@@ -221,6 +223,34 @@ let genHash = function(password) {
     });
   });
 };
+
+let createCommand = function(arr){
+    let configArr = arr;
+
+    let cmdStr = "sequelize init";
+
+    if (configArr[0])
+    {
+        cmdStr += " init:config";
+    }
+
+    if (configArr[1])
+    {
+        cmdStr += " init:models";
+    }
+
+    if (configArr[2])
+    {
+        cmdStr += " init:migrations";
+    }
+
+    if (configArr[3])
+    {
+        cmdStr += " init:seeders";
+    }
+
+    return cmdStr;
+}
 
 // Export routes for server.js to use.
 module.exports      = router;
