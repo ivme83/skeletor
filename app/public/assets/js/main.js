@@ -25,7 +25,7 @@ $('.next-btn').on('click', function(){
 
                 break;
             default:
-                alert("Select an option before moving on");
+                // alert("Select an option before moving on");
                 break;
         }
     }
