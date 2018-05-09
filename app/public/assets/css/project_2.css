@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Pacifico|Ubuntu');
+
+body {
+    background-color: #333333;
+    font-family: 'ubuntu', sans-serif;
+}
+.pacifico-text{ 
+    font-family: 'Pacifico';
+}
+.ibm-text {
+    font-family: 'IBM Plex Mono';
+
+}
+
+nav li:hover {
+    background-color: #673ab7;
+}
+#nav-hi:hover {
+    background-color: #212121;
+}
+
+label {
+    color: #424242;
+}
+
+.form-q {
+    font-family: 'ubuntu', sans-serif;
+    font-size: 20px;
+}
+
+#signin-header {
+    margin-top: 0px;
+    
+    font-size: 24px;
+}
+
+
+
+[type="radio"]:checked + label:before,
+[type="radio"].with-gap:checked + label:before {
+  border-color: #673ab7;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #673ab7;
+  border-color: #673ab7;
+}
+
+.colored:checked + label:before {
+    top: -4px;
+    left: -3px;
+    width: 12px;
+    height: 22px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #673ab7; /* You need to change the colour here */
+    border-bottom: 2px solid #673ab7; /* And here */
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%; 
+}

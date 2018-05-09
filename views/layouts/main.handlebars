@@ -1,85 +1,74 @@
-<!-- views/layouts/main.handlebars -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="User Authentication">
-  <meta name="author" content="">
+<html>
+  <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+      <!--Personal stylesheet-->
+      <link rel="stylesheet" href="/assets/css/project_2.css" rel="stylesheet" type="text/css">
 
-  <title>User Authentication</title>
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
 
-    <div class="container">
+    <nav class="grey darken-4">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo white-text pacifico-text">S<span class="deep-purple-text">kelly</span></a>
 
-      <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <ul class="right">
+          <li>
+            {{#if user}}
+                <a href="/signout">Log Out</a>
+              </li>
+            
+              </ul>
+              <ul class="right">
+                <li id="nav-hi"><a>
+                <strong>Hi,</strong>
+                <span class="ibm-text deep-purple-text text-accent-1">{{user.username}}</span>
+                </a></li>
+                  
+            {{else}}
+              <a href="/signin">Sign In</a>
+              </li>
+            {{/if}}
+        </ul>
       </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
-              {{#if user}}
-                <p class="navbar-text">
-                  <strong>Hi,</strong>
-                  <a href='/'>{{user.username}}</a>
-                </p>
-                </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <a href="/signout">Log Out</a>
-                  </li>
-              {{else}}
-                <a href="/signin">Sign In</a>
-                </li>
-              {{/if}}
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
     </nav>
 
-    {{#if error}}
-      <p class="alert alert-warning">{{error}}</p>
-    {{/if}}
+    <div class="container">
 
-    {{#if success}}
-      <p class="alert alert-success">{{success}}</p>
-    {{/if}}
+      {{#if error}}
+        <p>{{error}}</p>
+      {{/if}}
 
-    {{#if notice}}
-      <p class="alert alert-info">{{notice}}</p>
-    {{/if}}
+      {{#if success}}
+        <p>{{success}}</p>
+      {{/if}}
 
-    <!--where our other templates will insert-->
-    {{{body}}}
+      {{#if notice}}
+        <p>{{notice}}</p>
+      {{/if}}
+
+      <div class="row">
+        <!--where our other templates will insert-->
+        {{{body}}} 
+      </div>      
 
     </div> <!-- /container -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <!--Personal scripts-->
+  {{!-- <script src="assets/js/script.js"></script>   --}}
+
+  <script src="assets/js/main.js"></script>
 
   <script src="assets/js/userAuth.js"></script>
 </body>

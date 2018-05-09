@@ -1,20 +1,37 @@
 <!-- views/home.handlebars -->
 {{#if user}}
-  <div class="jumbotron">
-    <p>{{user.username}} Please click <span id="dwnldBtn">here</span> to download.</p>
+
+  <br><br><br><br>
+  <div class="container">
+    <div id="sign-in-card" class="card-panel showing deep-purple">
+
+      <p style="font-size: 22px" class="center deep-purple-text text-accent-1">{{user.username}}, Please click below to begin your download.</p>
+    
+      <br>
+
+      <p class="center">
+        <span id="dwnldBtn" class="btn white deep-purple-text">Download<i class="material-icons right">send        
+        </i></span>
+      </p>
+    </div>  
   </div>
  
 
 {{else}}
-  <div class="jumbotron">
+  <br><br><br><br>
 
-    <p>Sign in and view your profile!</p>
-    <p>
-      <a href="/signin" class="btn btn-primary btn-lg" role="button">
-        <span class="glyphicon glyphicon-user"></span>
-        Sign in!
-      </a>
-    </p>
+  <div class="container">
+    <div id="sign-in-card" class="card-panel showing deep-purple">
+
+      <p style="font-size: 22px" class="center deep-purple-text text-accent-1">Welcome to Skelly! The MVC folder stucture automater</p>
+      
+      <br>
+
+      <p class="center">
+        <a href="/signin"><button type="button" class="btn white deep-purple-text">Get Started<i class="material-icons right">send        
+        </i></button></a>
+      </p>
+    </div>  
   </div>
 
 {{/if}}
